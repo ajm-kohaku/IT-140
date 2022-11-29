@@ -45,5 +45,3 @@ if 1 <= remainder < 5:
         print('1 Penny')
     else:
         print('{} Pennies'.format(remainder))
-25,000,000,000
-25,000,000,000
