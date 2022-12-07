@@ -2,16 +2,6 @@
 Amber Murphy
 IT-140: 22EW22
 Module 6: Module Six Milestone - Move between rooms
-
-requirements:
-* ✅ prompt the player to enter commands to move between the rooms or exit
-* gameplay loop includes:
-    * ✅ output that displays the curent room
-    * ✅ decision branching that tells the game how ot handle different commands.
-    * ✅ if the player enters "exit" the game should set their room to a room called "exit"
-    * ✅ if a player enters an invalid command, the game should output an error message
-        -- sidestepped this a little. using pick to limit possible inputs
-* ✅ a way to end the gameplay loop once the player is in the "exit" room
 '''
 # A dictionary for the simplified dragon text game
 # The dictionary links a room to other rooms.
@@ -21,39 +11,58 @@ rooms = {
     'Cellar': {'West': 'Bedroom'}
 }
 
-def menu_prompt(options):
-    prompt = ''
-    for option in options:
-        prompt += f'{option}\n'
-    prompt += 'Exit'
-    return prompt
+# text instructions for the game
+def text_instructions():
+    return ('\n\nInstructions:\n'
+            'Type the direction you want to go.\n'
+            'e.g. If your options are North, South, Exit; type South followed by the "Enter" or "Return" key to move in that direction.\n'
+            'Type Exit to leave the game.\n'
+            'Type Help to see these instructions again.\n')
 
-def move(room):
-    options = []
+
+# get the current room options
+def current_room_options(room):
+    options = ['']
     for direction in rooms.get(room).keys():
         options.append(direction)
     options.append('Exit')
-    options.append('')
-    print('Type the direction you want to go.\n')
-    text_options = '\n'.join(options)
-    option = str(input(text_options))
-    if option.title() in options:
-        return option
-    else:
-        print('Invalid option. Try again.\n')
+    return '\n  '.join(options)
+
+# generate the text to display for the current room
+def room_text(room, hasBadInput=False):
+    room_text = (f'{text_instructions()}\n'
+            f'You are currently in the {room}. Where would you like to go?'
+            '\nYour options are:'
+            f'{current_room_options(room)}\n')
+            
+    # if the user typed an invalid option, show the error message
+    if hasBadInput:
+        room_text = f'{room_text}\n Invalid option. Try again.\n\n'
+    return room_text
+
 
 def main():
+    # start the game in the Great Hall
     current_room = 'Great Hall'
-    
+    hasBadInput = False
+
+    # loop until the user types Exit
     while True:
-        print(f'You are currently in the {current_room}')
-        option = move(current_room)
-        if option != None and option.title() == 'Exit':
+        # get the user's option
+        option = str(input(room_text(current_room, hasBadInput)))
+
+        # check the user's option
+        if option.title() == 'Exit':
             print('Taking you to the exit. Goodbye!')
             break
-        if option == None:
-            option = move(current_room)
-        else:
+        # if the user types Help, show the instructions
+        elif option.title() == 'Help':
+            hasBadInput = False
+        # if the user types a valid direction, move to that room
+        elif option.title() in rooms.get(current_room).keys():
             current_room = rooms.get(current_room).get(option.title())
-
+            hasBadInput = False
+        # if the user types an invalid direction, show the instructions with the error message
+        else:
+            hasBadInput = True
 main()
