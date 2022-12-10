@@ -1,0 +1,87 @@
+{
+    "genbuShrine": {
+      "token": "Turtle",
+      "item": "",
+      "description": "A grand statue of a turtle Genbu, guardian god of the north stands before you.",
+      "tokenDescription": "You take out the Turtle token and place it in an inlet at the base of the statue. The statue briefly glows with spiritual radiance.",
+      "wrongTokenDescription": "You place the token in the inlet at the base of the statue. The statue does not react.",
+      "directions": {
+        "east": "minamotoResidence",
+        "west": "fujiwaraResidence"
+      }
+    },
+    "minamotoResidence": {
+      "item": "Totsuka-no-Tsurugi",
+      "itemDescription": "Minamoto no Hiromasa hands you the legenday sword of Susanoo. You accept it reverently. He asks you to use this sword as the focus of the ritual",
+      "description": "You have arrived at the main residence of the Minamoto family in the city. A representative bades you enter to meet the lord of the residence, Minamoto no Hiromasa.",
+      "directions": {
+        "west": "genbuShrine",
+        "south": "seiryuuShrine"
+      }
+    },
+    "seiryuuShrine": {
+      "token": "Dragon",
+      "item": "",
+      "description": "A grand statue of the great dragon Seiryuu, guardian god of the east stands before you.",
+      "tokenDescription": "You take out the Dragon token and place it in an inlet at the base of the statue. The statue briefly glows with spiritual radiance.",
+      "wrongTokenDescription": "You place the token in the inlet at the base of the statue. The statue does not react.",
+      "directions": {
+        "north": "minamotoResidence",
+        "south": "murasakiResidence"
+      }
+    },
+    "murasakiResidence": {
+      "start":true,
+      "startDescription": "Madam Murasaki finishes explaning your objectives and sends you on your way. She reminds you that the great serpent is likely in the palace in the center of the city.",
+      "description": "You have arrived a the main residence of the great poet Murasaki Shikubu.",
+      "directions": {
+        "north": "seiryuuShrine",
+        "west": "suzakuShrine"
+      }
+    },
+    "suzakuShrine": {
+      "token": "Bird",
+      "item": "",
+      "description": "A grand statue of the magestic bird, Suzaku, guardian god of the south stands before you.",
+      "tokenDescription": "You take out the Bird token and place it in an inlet at the base of the statue. The statue briefly glows with spiritual radiance.",
+      "wrongTokenDescription": "You place the token in the inlet at the base of the statue. The statue does not react.",
+      "directions": {
+        "north": "grandPalace",
+        "east": "murasakiResidence",
+        "west": "abeResidence"
+      }
+    },
+    "abeResidence": {
+      "item": "Senji Ryakketsu",
+      "itemDescription": "The great Abe no Seimei himself hands you his manuscript on how to perform the ritual to reseal the great serpent",
+      "description": "You have arrived at the main residence of Abe no Seimei, the onmyoji master. A representative bades you enter to meet the lord of the residence.",
+      "directions": {
+        "east": "suzakuShrine",
+        "north": "byakkoShrine"
+      }
+    },
+    "byakkoShrine": {
+      "token": "Tiger",
+      "item": "",
+      "description": "A grand statue of the grand tiger, Byakko, guardian god of the west stands before you.",
+      "tokenDescription": "You take out the Tiger token and place it in an inlet at the base of the statue. The statue briefly glows with spiritual radiance.",
+      "wrongTokenDescription": "You place the token in the inlet at the base of the statue. The statue does not react.",
+      "directions": {
+        "north": "fujiwaraResidence",
+        "south": "abeResidence"
+      }
+    },
+    "fujiwaraResidence": {
+      "item":"Ofuda Talisman",
+      "itemDescription": "The servent at the gate hands you a Ofuda Talisman imbued with protections that will help you fight the serpent",
+      "description": "You have arrived a the main residence of the Fujiwara family in the city.",
+      "directions": {
+        "east": "genbuShrine",
+        "south": "byakkoShrine"
+      }
+    },
+    "grandPalace": {
+      "description": "You pass the palace gates and walk toward the grand hall when the a lone figure approaches you. As the figure approaches, their form begins to twist and warp. The great serpent is front of you! Are you prepared?"
+    }
+  }
+  

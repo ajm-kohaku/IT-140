@@ -324,7 +324,7 @@ and outputs non-negative integers in ascending order (lowest to highest).
 # string_list = list(map(str,filtered_list))
 # print(' '.join(string_list), end=' ')
 
-# 6.18 LAB word frequencies
+#### 6.18 LAB word frequencies
 '''
 Write a program that reads a list of words. 
 Then, the program outputs those words and their frequencies. 
@@ -346,7 +346,7 @@ Then, the program outputs those words and their frequencies.
 #     print(word, count)
 # print()
 
-# 6.19 LAB Replacement words
+#### 6.19 LAB Replacement words
 '''
 Write a program that replaces words in a sentence. 
 The input begins with word replacement pairs (original and replacement). 
