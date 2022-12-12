@@ -63,30 +63,32 @@ def can_win():
         print(can_win_text)
     return can_win
 
+
 def boss_room():
     typewriter_output(gamer.game_data.get('grandPalace').get('description'))
     if gamer.can_win:
         game_over_text = ('\nYes! You have come prepared to meet the Great Serpent.'
-                        '\nAs the figure approaches, you raise Totsuka-no-Tsurugi in one hand, the Ofuda Talisman in the other hand.'
-                        '\nYou chant the ritual words taught to you by Seimei in the manuscript. The Serpent recoils. You feel the strength of the city\'s array empower you.'
-                        '\nThe serpent screams. Black mist spills out out of the figure as it collapses. The mist dissipates harmlessly.'
-                        '\nThe skies clear and you catch a glimpse of the array in the sky before it too vanishes.\n'
-                        '\n YOU WIN!!')
+                          '\nAs the figure approaches, you raise Totsuka-no-Tsurugi in one hand, the Ofuda Talisman in the other hand.'
+                          '\nYou chant the ritual words taught to you by Seimei in the manuscript. The Serpent recoils. You feel the strength of the city\'s array empower you.'
+                          '\nThe serpent screams. Black mist spills out out of the figure as it collapses. The mist dissipates harmlessly.'
+                          '\nThe skies clear and you catch a glimpse of the array in the sky before it too vanishes.\n'
+                          '\n YOU WIN!!')
+        typewriter_output(game_over_text)
     else:
         typewriter_output('\nNo. You were not prepared.')
         if any(item in gamer.tokens for item in gamer.inventory):
             game_over_text = ('\nYou were unable to complete the magical array around the city. The Great Serpent forms before you, the skys turn black.'
-                    '\nDarkness consumes you. And the last sounds you hear are a sinister laughter.'
-                    '\n GAME OVER\n')
+                              '\nDarkness consumes you. And the last sounds you hear are a sinister laughter.'
+                              '\n GAME OVER\n')
             typewriter_output(game_over_text)
         else:
             game_over_text = ('\nYou were able to get the array up in time. However, you were unable to gather all the ritual instruments needed to seal the beast.'
-            '\nThe Great Serpent forms before you, the skys turn black.'
-                    '\nDarkness consumes you. And the last sounds you hear are a sinister laughter.'
-                    '\n GAME OVER\n')
+                              '\nThe Great Serpent forms before you, the skys turn black.'
+                              '\nDarkness consumes you. And the last sounds you hear are a sinister laughter.'
+                              '\n GAME OVER\n')
             typewriter_output(game_over_text)
     gamer.exit = True
-            
+
 
 def exit():
     typewriter_output('Exiting the game. Goodbye!')
@@ -95,7 +97,7 @@ def exit():
 
 def help():
     typewriter_output(instruction_text(), 0.01)
-    time.sleep(0.1)
+    time.sleep(1)
     gamer.has_bad_input = False
 
 
@@ -167,15 +169,18 @@ def current_room_options(room):
 
 def room_text(room: str):
     gamer.can_win = can_win()
-    room_text = ''
+    room_text = ' '
     if gamer.start:
-        room_text = gamer.game_data.get(room).get("startDescription")
+        room_text = (f'You begin at the {get_pretty_name(room)}'
+                    f'\n{gamer.game_data.get(room).get("startDescription")}')
+        gamer.start = False
     else:
         room_text = (f'You have arrived at the {get_pretty_name(room)}.'
-                 f'{gamer.game_data.get(room).get("description")}')
+                     f'\n{gamer.game_data.get(gamer.current_room).get("description")}')
     if gamer.current_room != 'grandPalace':
-        room_text = room_text + ('\nWhat would you like to do?\nYour options are:'
-                                 f'{current_room_options(room)}\n')
+        room_text = (f'{room_text}'
+                     '\nWhat would you like to do?\nYour options are:'
+                     f'{current_room_options(room)}\n')
     if gamer.has_bad_input:
         room_text = f'{room_text}\n Invalid option. Try again.\n\n'
 
@@ -232,7 +237,7 @@ def parse_gamer_input(input: str):
 
 def main():
     gamer.game_data = load_game_data()
-    typewriter_output(intro_text())
+    # typewriter_output(intro_text())
     print(DECORATIVE_TEXT)
     print(instruction_text())
 
