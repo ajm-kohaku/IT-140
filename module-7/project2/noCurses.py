@@ -1,8 +1,3 @@
-'''
-Amber Murphy
-IT-140: 22EW22
-Module 7: TextBasedGame
-'''
 import collections
 import json
 import os
@@ -19,7 +14,6 @@ class gameStats:
         self.options = ['go', 'place', 'get', 'help', 'exit']
         self.can_win = False
         self.exit = False
-        self.start = True
         self.current_room = 'murasakiResidence'
         self.selected_option = ''
         self.has_bad_input = False
@@ -167,14 +161,10 @@ def current_room_options(room):
 
 def room_text(room: str):
     gamer.can_win = can_win()
-    room_text = ''
-    if gamer.start:
-        room_text = gamer.game_data.get(room).get("startDescription")
-    else:
-        room_text = (f'You have arrived at the {get_pretty_name(room)}.'
-                 f'{gamer.game_data.get(room).get("description")}')
+    room_text = (f'You are currently in the {get_pretty_name(room)}.'
+                 )
     if gamer.current_room != 'grandPalace':
-        room_text = room_text + ('\nWhat would you like to do?\nYour options are:'
+        room_text = room_text + ('What would you like to do?\nYour options are:'
                                  f'{current_room_options(room)}\n')
     if gamer.has_bad_input:
         room_text = f'{room_text}\n Invalid option. Try again.\n\n'
@@ -232,7 +222,7 @@ def parse_gamer_input(input: str):
 
 def main():
     gamer.game_data = load_game_data()
-    typewriter_output(intro_text())
+
     print(DECORATIVE_TEXT)
     print(instruction_text())
 

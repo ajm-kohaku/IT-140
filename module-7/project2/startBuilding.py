@@ -1,6 +1,9 @@
 import curses, textwrap
 from curses.panel import new_panel, top_panel, update_panels
-from curses.textpad import rectangle
+from curses.textpad import Textbox, rectangle
+
+MIN_CONSOLE_WIDTH = 150
+MIN_CONSOLE_HEIGHT = 30
 
 def wait_to_quit(screen) -> int:
     while True:
@@ -29,34 +32,30 @@ def set_terminal_requirements(stdscr: 'curses._CursesWindow') -> int:
     # get terminal max height & width
     h, w = screen.getmaxyx()
 
-    # declare program minimums
-    min_height = 20
-    min_width = 100
-
     screen.clear()
     while True:
         screen.addstr(0,0, f'your screensize is: {w} by {h}')
         # check width and height
-        if h < min_height:
+        if h < MIN_CONSOLE_HEIGHT:
             screen.addstr(1,0, f'game needs more height. please make terminal taller')
         else:
             screen.move(1,0)
             screen.clrtoeol()
-        if w < min_width:
+        if w < MIN_CONSOLE_WIDTH:
             screen.addstr(2, 0, f'game needs more width. please make terminal wider')
         else:
             screen.move(2,0)
             screen.clrtoeol()
 
         # print requirements
-        screen.addstr(3,1, f'screen requirements: {min_width} by {min_height}')
+        screen.addstr(3,1, f'screen requirements: {MIN_CONSOLE_WIDTH} by {MIN_CONSOLE_HEIGHT}')
         
         # recheck screen
         h, w = screen.getmaxyx()
 
         # breakout if we're copacetic 
-        if h >= min_height and w >= min_width:
-            screen.addstr(3,1, f'you meet the minimum screen requirements of {min_width} by {min_height}')
+        if h >= MIN_CONSOLE_HEIGHT and w >= MIN_CONSOLE_WIDTH:
+            screen.addstr(3,1, f'you meet the minimum screen requirements of {MIN_CONSOLE_WIDTH} by {MIN_CONSOLE_HEIGHT}')
             return 0
         
         # don't crash while resizing the window
@@ -81,6 +80,34 @@ def do_it(win):  # Shia LeBeouf!
     win.getch()
 
 def setup_terminal(screen, text) -> dict:
+    if curses.has_colors:
+        curses.use_default_colors()
+        # purple foreground on grey background
+    curses.init_pair(1, 99, 237)
+    
+    win = text_window(screen, text)
+    win.getch()
+
+def text_window(screen: 'curses._CursesWindow', text):
+    WIN_HEIGHT = MIN_CONSOLE_HEIGHT - 15
+    WIN_WIDTH = MIN_CONSOLE_WIDTH - 10
+    formatted_text = textwrap.fill(text, width=WIN_WIDTH - 2, initial_indent='  ', subsequent_indent='  ')
+    num_lines = 0
+    for char in formatted_text:
+        if char == '\n':
+            num_lines+=1
+    print(num_lines)
+    box1 = curses.newwin(num_lines + 5, WIN_WIDTH, 1, 1)
+    box1.box()
+    box1.refresh()
+    # derwin is relative to the parent window:
+    box2 = box1.derwin(num_lines + 3, WIN_WIDTH -2, 1,1)
+    box2.addstr(1, 1, f'{formatted_text}')
+    box2.refresh()
+    return box2
+         
+
+def tossed_terminal(screen, text):
     if curses.has_colors():
         curses.use_default_colors()
         # purple foreground on grey background
@@ -133,23 +160,8 @@ def intro_text():
             'In order from North moving clockwise there\'s; Genbu, Seiyruu, Suzaku, and Byakko.')
 
 def main(stdscr):
-    setup_terminal(stdscr, textwrap.fill(intro_text(),width=85))
+    setup_terminal(stdscr, intro_text())
 
-    # End of Program...
-    # Turn off cbreak mode...
-    curses.nocbreak()
-
-    # Turn echo back on.
-    curses.echo()
-
-    # Restore cursor blinking.
-    curses.curs_set(True)
-
-    # Turn off the keypad...
-    # stdscr.keypad(False)
-
-    # Restore Terminal to original state.
-    curses.endwin()
 
 
 

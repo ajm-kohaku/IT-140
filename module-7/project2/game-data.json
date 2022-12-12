@@ -2,6 +2,7 @@
     "genbuShrine": {
       "token": "Turtle",
       "item": "",
+      "itemDescription": "You remove the Turtle token from the inlet at the base of the statue. The statue's light dims. \n Note: All statues must glow to win the game.", 
       "description": "A grand statue of a turtle Genbu, guardian god of the north stands before you.",
       "tokenDescription": "You take out the Turtle token and place it in an inlet at the base of the statue. The statue briefly glows with spiritual radiance.",
       "wrongTokenDescription": "You place the token in the inlet at the base of the statue. The statue does not react.",
@@ -11,9 +12,9 @@
       }
     },
     "minamotoResidence": {
-      "item": "Totsuka-no-Tsurugi",
-      "itemDescription": "Minamoto no Hiromasa hands you the legenday sword of Susanoo. You accept it reverently. He asks you to use this sword as the focus of the ritual",
-      "description": "You have arrived at the main residence of the Minamoto family in the city. A representative bades you enter to meet the lord of the residence, Minamoto no Hiromasa.",
+      "item": "Sword",
+      "itemDescription": "Minamoto no Hiromasa hands you the legendary sword of Susanoo, Totsuka-no-Tsurugi. You accept it reverently. He asks you to use this sword as the focus of the ritual",
+      "description": "A representative greets you at the entrance and motions for you enter and meet the lord of the residence, Minamoto no Hiromasa.",
       "directions": {
         "west": "genbuShrine",
         "south": "seiryuuShrine"
@@ -22,6 +23,7 @@
     "seiryuuShrine": {
       "token": "Dragon",
       "item": "",
+      "itemDescription": "You remove the Dragon token from the inlet at the base of the statue. The statue's light dims. \n Note: All statues must glow to win the game.", 
       "description": "A grand statue of the great dragon Seiryuu, guardian god of the east stands before you.",
       "tokenDescription": "You take out the Dragon token and place it in an inlet at the base of the statue. The statue briefly glows with spiritual radiance.",
       "wrongTokenDescription": "You place the token in the inlet at the base of the statue. The statue does not react.",
@@ -32,8 +34,8 @@
     },
     "murasakiResidence": {
       "start":true,
-      "startDescription": "Madam Murasaki finishes explaning your objectives and sends you on your way. She reminds you that the great serpent is likely in the palace in the center of the city.",
-      "description": "You have arrived a the main residence of the great poet Murasaki Shikubu.",
+      "startDescription": "Madam Murasaki finishes explaining your objectives and sends you on your way. She reminds you that the great serpent is likely in the palace in the center of the city.",
+      "description": "The great poet Murasaki Shikubu smiles and motions you to move onward",
       "directions": {
         "north": "seiryuuShrine",
         "west": "suzakuShrine"
@@ -42,7 +44,8 @@
     "suzakuShrine": {
       "token": "Bird",
       "item": "",
-      "description": "A grand statue of the magestic bird, Suzaku, guardian god of the south stands before you.",
+      "itemDescription": "You remove the Bird token from the inlet at the base of the statue. The statue's light dims. \n Note: All statues must glow to win the game.", 
+      "description": "A grand statue of the majestic bird, Suzaku, guardian god of the south stands before you.",
       "tokenDescription": "You take out the Bird token and place it in an inlet at the base of the statue. The statue briefly glows with spiritual radiance.",
       "wrongTokenDescription": "You place the token in the inlet at the base of the statue. The statue does not react.",
       "directions": {
@@ -52,9 +55,9 @@
       }
     },
     "abeResidence": {
-      "item": "Senji Ryakketsu",
-      "itemDescription": "The great Abe no Seimei himself hands you his manuscript on how to perform the ritual to reseal the great serpent",
-      "description": "You have arrived at the main residence of Abe no Seimei, the onmyoji master. A representative bades you enter to meet the lord of the residence.",
+      "item": "Manuscript",
+      "itemDescription": "The great Abe no Seimei himself hands you his manuscript, the Senji Ryakketsu, on how to perform the ritual to reseal the great serpent",
+      "description": "The main residence of Abe no Seimei, the onmyoji master. A representative beckons you to enter and meet the lord of the residence.",
       "directions": {
         "east": "suzakuShrine",
         "north": "byakkoShrine"
@@ -63,6 +66,7 @@
     "byakkoShrine": {
       "token": "Tiger",
       "item": "",
+      "itemDescription": "You remove the Tiger token from the inlet at the base of the statue. The statue's light dims. \n Note: All statues must glow to win the game.", 
       "description": "A grand statue of the grand tiger, Byakko, guardian god of the west stands before you.",
       "tokenDescription": "You take out the Tiger token and place it in an inlet at the base of the statue. The statue briefly glows with spiritual radiance.",
       "wrongTokenDescription": "You place the token in the inlet at the base of the statue. The statue does not react.",
@@ -72,9 +76,9 @@
       }
     },
     "fujiwaraResidence": {
-      "item":"Ofuda Talisman",
-      "itemDescription": "The servent at the gate hands you a Ofuda Talisman imbued with protections that will help you fight the serpent",
-      "description": "You have arrived a the main residence of the Fujiwara family in the city.",
+      "item":"Talisman",
+      "itemDescription": "The servant at the gate hands you a Ofuda Talisman imbued with protections that will help you fight the serpent",
+      "description": "The main residence of the Fujiwara family in the city.",
       "directions": {
         "east": "genbuShrine",
         "south": "byakkoShrine"
