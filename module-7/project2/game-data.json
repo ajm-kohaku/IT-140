@@ -2,10 +2,10 @@
     "genbuShrine": {
       "token": "Turtle",
       "item": "",
-      "itemDescription": "You remove the Turtle token from the inlet at the base of the statue. The statue's light dims. \n Note: All statues must glow to win the game.", 
+      "itemDescription": "You remove the Turtle token from the inset at the base of the statue. The statue's light dims. \n Note: All statues must glow to win the game.", 
       "description": "A grand statue of a turtle Genbu, guardian god of the north stands before you.",
-      "tokenDescription": "You take out the Turtle token and place it in an inlet at the base of the statue. The statue briefly glows with spiritual radiance.",
-      "wrongTokenDescription": "You place the token in the inlet at the base of the statue. The statue does not react.",
+      "tokenDescription": "You take out the Turtle token and place it in an inset at the base of the statue. The statue glows with spiritual radiance.",
+      "wrongTokenDescription": "You place the token in the inset at the base of the statue. The statue does not react.",
       "directions": {
         "east": "minamotoResidence",
         "west": "fujiwaraResidence"
@@ -23,10 +23,10 @@
     "seiryuuShrine": {
       "token": "Dragon",
       "item": "",
-      "itemDescription": "You remove the Dragon token from the inlet at the base of the statue. The statue's light dims. \n Note: All statues must glow to win the game.", 
+      "itemDescription": "You remove the Dragon token from the inset at the base of the statue. The statue's light dims. \n Note: All statues must glow to win the game.", 
       "description": "A grand statue of the great dragon Seiryuu, guardian god of the east stands before you.",
-      "tokenDescription": "You take out the Dragon token and place it in an inlet at the base of the statue. The statue briefly glows with spiritual radiance.",
-      "wrongTokenDescription": "You place the token in the inlet at the base of the statue. The statue does not react.",
+      "tokenDescription": "You take out the Dragon token and place it in an inset at the base of the statue. The statue glows with spiritual radiance.",
+      "wrongTokenDescription": "You place the token in the inset at the base of the statue. The statue does not react.",
       "directions": {
         "north": "minamotoResidence",
         "south": "murasakiResidence"
@@ -44,10 +44,10 @@
     "suzakuShrine": {
       "token": "Bird",
       "item": "",
-      "itemDescription": "You remove the Bird token from the inlet at the base of the statue. The statue's light dims. \n Note: All statues must glow to win the game.", 
+      "itemDescription": "You remove the Bird token from the inset at the base of the statue. The statue's light dims. \n Note: All statues must glow to win the game.", 
       "description": "A grand statue of the majestic bird, Suzaku, guardian god of the south stands before you.",
-      "tokenDescription": "You take out the Bird token and place it in an inlet at the base of the statue. The statue briefly glows with spiritual radiance.",
-      "wrongTokenDescription": "You place the token in the inlet at the base of the statue. The statue does not react.",
+      "tokenDescription": "You take out the Bird token and place it in an inset at the base of the statue. The statue glows with spiritual radiance.",
+      "wrongTokenDescription": "You place the token in the inset at the base of the statue. The statue does not react.",
       "directions": {
         "north": "grandPalace",
         "east": "murasakiResidence",
@@ -66,10 +66,10 @@
     "byakkoShrine": {
       "token": "Tiger",
       "item": "",
-      "itemDescription": "You remove the Tiger token from the inlet at the base of the statue. The statue's light dims. \n Note: All statues must glow to win the game.", 
+      "itemDescription": "You remove the Tiger token from the inset at the base of the statue. The statue's light dims. \n Note: All statues must glow to win the game.", 
       "description": "A grand statue of the grand tiger, Byakko, guardian god of the west stands before you.",
-      "tokenDescription": "You take out the Tiger token and place it in an inlet at the base of the statue. The statue briefly glows with spiritual radiance.",
-      "wrongTokenDescription": "You place the token in the inlet at the base of the statue. The statue does not react.",
+      "tokenDescription": "You take out the Tiger token and place it in an inset at the base of the statue. The statue glows with spiritual radiance.",
+      "wrongTokenDescription": "You place the token in the inset at the base of the statue. The statue does not react.",
       "directions": {
         "north": "fujiwaraResidence",
         "south": "abeResidence"
@@ -85,7 +85,7 @@
       }
     },
     "grandPalace": {
-      "description": "You pass the palace gates and walk toward the grand hall when the a lone figure approaches you. As the figure approaches, their form begins to twist and warp. The great serpent is front of you! Are you prepared?"
+      "description": "You pass the palace gates and walk toward the grand hall when the a lone figure approaches you. As the figure approaches, their form begins to twist and warp. The great serpent is in front of you! Are you prepared?"
     }
   }
   

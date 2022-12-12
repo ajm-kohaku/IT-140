@@ -16,7 +16,7 @@ class gameStats:
         self.inventory = ['Turtle', 'Dragon', 'Bird', 'Tiger']
         self.tokens = ['Turtle', 'Dragon', 'Bird', 'Tiger']
         self.win_inventory = ['Sword', 'Talisman', 'Manuscript']
-        self.options = ['go', 'place', 'get', 'help', 'exit']
+        self.options = ['go', 'place', 'get', 'help', 'intro','exit']
         self.can_win = False
         self.exit = False
         self.start = True
@@ -162,6 +162,7 @@ def current_room_options(room):
         options.append(f'Place {room_dict.get("token")}')
     if room_dict.get('item'):
         options.append(f'Get {room_dict.get("item")}')
+    options.append('Intro (you may need to scroll up to see the text repeated)')
     options.append('Help')
     options.append('Exit')
     return '\n\t\t'.join(options)
@@ -237,7 +238,7 @@ def parse_gamer_input(input: str):
 
 def main():
     gamer.game_data = load_game_data()
-    # typewriter_output(intro_text())
+    typewriter_output(intro_text())
     print(DECORATIVE_TEXT)
     print(instruction_text())
 
@@ -256,6 +257,8 @@ def main():
                 get_item(choice)
             case 'help':
                 help()
+            case 'intro':
+                print(intro_text())
             case 'exit':
                 exit()
             case _:
